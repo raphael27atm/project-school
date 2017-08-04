@@ -1,0 +1,26 @@
+version: '2'
+services:
+
+  postgres:
+    image: 'postgres:9.5'
+    environment:
+      POSTGRES_USER: 'raphael'
+      POSTGRES_PASSWORD: 'senha'
+    ports:
+      - '5432:5432'
+    volumes:
+      - /home/raphael/backup/data/postgres:/var/lib/postgresql/data
+
+  school:
+    build: .
+    command: rails server --port 3000 --binding 0.0.0.0
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+    links:
+      - postgres
+    volumes:
+      - .:/home/school
+
+      
