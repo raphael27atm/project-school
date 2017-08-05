@@ -18,5 +18,9 @@
 
 .byebug_history
 
+# Docker
+DockerFIle
+docker-compose.yml
+
 # ENV
 .env

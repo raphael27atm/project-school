@@ -1,4 +1,4 @@
-ruby "2.4.1
+ruby "2.4.1"
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -16,13 +16,15 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'will_paginate'
 gem 'geocoder'
+gem 'devise', '~> 4.2'
+gem 'slim-rails', '~> 3.1', '>= 3.1.1'
+
 # Env variables
 gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
-  gem "capybara-webkit"
   gem 'guard-rspec', '~> 4.7',  require: false
   gem 'factory_girl_rails', '~> 4.8'
   gem 'shoulda-matchers', '~> 3.1'
