@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170805005136) do
   end
 
   create_table "matriculations", force: :cascade do |t|
+    t.string "number"
     t.bigint "student_id"
     t.bigint "team_id"
     t.datetime "created_at", null: false
@@ -62,7 +63,6 @@ ActiveRecord::Schema.define(version: 20170805005136) do
 
   create_table "students", force: :cascade do |t|
     t.string "name"
-    t.string "matriculation"
     t.integer "age"
     t.string "phone"
     t.bigint "unit_id"

@@ -1,4 +1,5 @@
 class School < ApplicationRecord
-  # relations
-  belongs_to :address
+  include ModuleAddess
+  
+  validates :name, presence: true
 end
