@@ -8,6 +8,8 @@ class User < ApplicationRecord
   belongs_to :role       
   before_create :set_default_role
   
+  validates :role, :name, presence: true
+
   private
   
   def set_default_role

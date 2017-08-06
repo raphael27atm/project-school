@@ -25,12 +25,17 @@ gem 'dotenv-rails'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
+  gem 'rspec-rails', '~> 3.5'
   gem 'guard-rspec', '~> 4.7',  require: false
   gem 'factory_girl_rails', '~> 4.8'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'faker', '~> 1.7'
   gem 'pry'
   gem 'selenium-webdriver'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 group :development do

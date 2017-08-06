@@ -3,7 +3,8 @@ class Address < ApplicationRecord
   after_validation :geocode
 
   # relations
-  belongs_to :addressable, :polymorphic => true
+  # polymorphic relation with schools and unit
+  belongs_to :addressable, :polymorphic => true, optional: true
 
   def full_address
     "#{street}, #{number}, #{neighborhood}, #{city}, #{state}"
