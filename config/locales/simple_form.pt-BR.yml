@@ -39,7 +39,11 @@ pt-BR:
         number: Número
         neighborhood: Bairro
         street: Rua
-
+        unit_id: Unidade
+        team_id: Turma
+        school_id: Escola
+        student_id: Estudante
+        age: Idade
 
     hints:
       defaults:

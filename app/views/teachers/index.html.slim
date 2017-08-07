@@ -1,0 +1,35 @@
+.row
+  .col-md-6
+    h2.title Professores
+  .col-md-6
+    = link_to "Adicionar novo professor", new_teacher_path, class: "btn btn-success pull-right"
+
+.box-white
+  - if @teachers.any?
+    table class="table table-striped"
+      thead 
+        tr 
+          th # 
+          th Nome
+          th Unidade
+          th.percent-20.text-center Ação
+      tbody 
+        - @teachers.each do |teacher|
+          tr id="teacher_#{teacher.id}"
+            th scope="row" = teacher.id
+            td = teacher.name
+            td = teacher.unit.name
+            td.text-center
+              = link_to teacher_path(teacher), class: "margin-right" do
+                  button.btn.btn-info
+                    i.fa.fa-eye
+              = link_to edit_teacher_path(teacher), class: "margin-right" do
+                  button.btn.btn-primary
+                    i.fa.fa-edit
+              = link_to teacher_path(teacher), id: "link_trash_#{teacher.id}" , :method => :delete, data: { confirm: 'Deseja deletar professor?'}do
+                  button.btn.btn-danger
+                    i.fa.fa-trash
+  - else
+    .alert.alert-info
+      | Não existe nenhum Professor cadastrado
+

@@ -3,12 +3,6 @@ require 'rails_helper'
 shared_examples_for 'address' do |factory_name|
   let(:address) { create(:address) }
   
-  it "has a auto increment id" do
-    expect(create(factory_name).id).to eq(1)
-    expect(create(factory_name).id).to eq(2)
-    expect(create(factory_name).id).to eq(3)
-  end
-
   describe 'has_complete_registration?' do
     it "returns true if all required fields are filled" do
       data = build(factory_name, address: address)

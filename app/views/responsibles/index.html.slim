@@ -1,0 +1,32 @@
+.row
+  .col-md-6
+    h2.title Responsáveis
+  .col-md-6
+    = link_to "Adicionar novo resposável", new_responsible_path, class: "btn btn-success pull-right"
+
+.box-white
+  - if @responsibles.any?
+    table class="table table-striped"
+      thead 
+        tr 
+          th # 
+          th Nome
+          th É responsável por?
+          th.percent-20.text-center Ação
+      tbody 
+        - @responsibles.each do |responsible|
+          tr id="responsible_#{responsible.id}"
+            th scope="row" = responsible.id
+            td = responsible.name
+            td = responsible.student.name
+            td.text-center
+              = link_to edit_responsible_path(responsible), class: "margin-right" do
+                  button.btn.btn-primary
+                    i.fa.fa-edit
+              = link_to responsible_path(responsible), id: "link_trash_#{responsible.id}" , :method => :delete, data: { confirm: 'Deseja deletar estudante?'}do
+                  button.btn.btn-danger
+                    i.fa.fa-trash
+  - else
+    .alert.alert-info
+      | Não existe nenhum estudante cadastrado
+

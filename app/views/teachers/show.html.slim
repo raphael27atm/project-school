@@ -1,0 +1,4 @@
+h2.title = @unit.name
+.box-white
+  p = @unit.address ? "#{@unit.address.full_address}" : "Nâo possui endereço cadastrado ainda"
+  = link_to "Voltar", :back, class: "btn btn-warning"

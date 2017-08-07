@@ -12,5 +12,9 @@ Rails.application.routes.draw do
     }
   root to: 'dashboard#index'  
 
-  resources :units
+  resources :units, path: "unidades"
+  resources :students, path: "estudantes"
+  resources :teachers, path: "professores"
+  resources :responsibles, path: "responsaveis"
+  resources :teams, path: "turmas"
 end
