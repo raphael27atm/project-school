@@ -1,0 +1,6 @@
+h2.title Criar Unidade
+.box-white
+  = simple_form_for(@unit, html: { class: 'form-horizontal' }) do |f|
+    = render 'form', f: f
+    = f.submit "Salvar", class: "btn btn-success margin-right"
+    = link_to "Voltar", :back, class: "btn btn-warning"  

@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let(:role){ create(:role)}
+  let(:school){ create(:school)}
 
   it 'is valid with valid atributes' do
 
-    user = create(:user, role: role)
+    user = create(:user, role: role, school_id: school.id)
     expect(user).to be_valid
   end
 
@@ -25,9 +26,11 @@ RSpec.describe User, type: :model do
   end
 
   describe 'validations shoulda matchers' do
-    subject(:user) { create(:user, role: role)}
+    subject(:user) { create(:user, role: role, school_id: school.id)}
     it { is_expected.to validate_presence_of(:name)}
     it { is_expected.to validate_presence_of(:email)}
+    it { is_expected.to validate_presence_of(:email)}
+    it { is_expected.to validate_presence_of(:school_id)}
     it { is_expected.to validate_presence_of(:role)}
   end
   

@@ -1,0 +1,37 @@
+.row
+  .col-md-6
+    h2.title Unidades
+  .col-md-6
+    = link_to "Adicionar nova unidade", new_unit_path, class: "btn btn-success pull-right"
+
+.box-white
+  - if @units.any?
+    table class="table table-striped"
+      thead 
+        tr 
+          th # 
+          th Unidade
+          th Quatidade de Turmas
+          th Quantidade de Alunos
+          th.percent-20.text-center Ação
+      tbody 
+        - @units.each do |unit|
+          tr id="unit_#{unit.id}"
+            th scope="row" 1
+            td = unit.name
+            td = unit.teams.count
+            td = unit.students.count
+            td.text-center
+              = link_to unit_path(unit), class: "margin-right" do
+                  button.btn.btn-info
+                    i.fa.fa-eye
+              = link_to edit_unit_path(unit), class: "margin-right" do
+                  button.btn.btn-primary
+                    i.fa.fa-edit
+              = link_to unit_path(unit), id: "link_trash_#{unit.id}" , :method => :delete, data: { confirm: 'Deseja deletar essa unidade?'}do
+                  button.btn.btn-danger
+                    i.fa.fa-trash
+  - else
+    .alert.alert-info
+      | Não existe nenhuma unidade cadastrada
+

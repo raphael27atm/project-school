@@ -11,4 +11,6 @@ Rails.application.routes.draw do
       sign_up: 'cmon_let_me_in' 
     }
   root to: 'dashboard#index'  
+
+  resources :units
 end

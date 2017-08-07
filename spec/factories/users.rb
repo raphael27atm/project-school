@@ -5,6 +5,6 @@ FactoryGirl.define do
     password 'senha'
     password_confirmation 'senha'
     association :role, factory: :role
-
+    association :school, factory: :school
   end
 end
