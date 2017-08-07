@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       registration: 'register', 
       sign_up: 'cmon_let_me_in' 
     }
+  root to: 'dashboard#index'  
 end

@@ -1,0 +1,15 @@
+@import "base/_global";
+
+.form-content  {
+  background: #FFFFFF;
+  width: 400px;
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  margin: 100px auto 10px;
+  overflow: hidden;
+  padding: 20px;
+  .input-group{
+    margin-bottom: 20px;
+  }
+}
