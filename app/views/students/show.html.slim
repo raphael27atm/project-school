@@ -1,0 +1,38 @@
+h2.title = @student.name
+.box-white
+  table class="table table-striped"
+      thead 
+        tr 
+          th Idade
+          th Telefone
+      tbody 
+        tr
+          td = @student.age
+          td = @student.phone
+          
+  h3 Responsáveis
+  - if @student.responsibles.any?
+    table class="table table-striped"
+      thead 
+        tr 
+          th # 
+          th Nome
+          th.percent-20.text-center Ação
+      tbody 
+        - @student.responsibles.each do |responsible|
+          tr id="responsible_#{responsible.id}"
+            th scope="row" = responsible.id
+            td = responsible.name
+            td.text-center
+              = link_to edit_responsible_path(responsible), class: "margin-right" do
+                  button.btn.btn-info
+                    i.fa.fa-edit
+              = link_to edit_responsible_path(responsible), class: "margin-right" do
+                  button.btn.btn-primary
+                    i.fa.fa-edit
+              
+  - else
+    .alert.alert-info
+      | Não existe nenhum resposável cadastrado para esse estudante
+  
+  = link_to "Voltar", :back, class: "btn btn-warning"

@@ -1,0 +1,35 @@
+.row
+  .col-md-6
+    h2.title Etudantes
+  .col-md-6
+    = link_to "Adicionar novo estudante", new_student_path, class: "btn btn-success pull-right"
+
+.box-white
+  - if @students.any?
+    table class="table table-striped"
+      thead 
+        tr 
+          th # 
+          th Nome
+          th Unidade
+          th.percent-20.text-center Ação
+      tbody 
+        - @students.each do |student|
+          tr id="student_#{student.id}"
+            th scope="row" = student.id
+            td = student.name
+            td = student.unit.name
+            td.text-center
+              = link_to student_path(student), class: "margin-right" do
+                  button.btn.btn-info
+                    i.fa.fa-eye
+              = link_to edit_student_path(student), class: "margin-right" do
+                  button.btn.btn-primary
+                    i.fa.fa-edit
+              = link_to student_path(student), id: "link_trash_#{student.id}" , :method => :delete, data: { confirm: 'Deseja deletar estudante?'}do
+                  button.btn.btn-danger
+                    i.fa.fa-trash
+  - else
+    .alert.alert-info
+      | Não existe nenhum estudante cadastrado
+

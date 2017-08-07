@@ -1,7 +1,9 @@
 class UnitsController < BaseController
+  
   before_action :set_unit, except: [:index, :new, :create]
+  
   def index
-    @units = Unit.all.includes(:students, :teams).paginate(:page => params[:page], :per_page => 15)
+    @units = Unit.all.includes(:students, :teams).order(id: :desc).paginate(:page => params[:page], :per_page => 15)
   end
 
   def show
@@ -32,7 +34,7 @@ class UnitsController < BaseController
       redirect_to action: :index
     else
       flash[:error] = 'Erro ao editar a unidade'
-      render :show
+      render :edit
     end
   end
 

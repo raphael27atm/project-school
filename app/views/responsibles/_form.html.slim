@@ -1,0 +1,4 @@
+.form-group
+  = f.input :name
+  = f.input :student_id, collection: Student.all.map{|s| [s.name, s.id] }
+
