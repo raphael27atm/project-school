@@ -1,16 +1,15 @@
-h2 Log in
 
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    = f.email_field :email, autofocus: true
-
-  .field
-    = f.label :password 
-    = f.password_field :password, autocomplete: "off"
-
-  .actions
-    = f.submit "Log in"
-
-
-= render "devise/shared/links"
+.form-content
+  h2.text-center.title Acesso escola
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    = render "shared/messages"
+    .input-group.input-group-lg
+      span.input-group-addon
+        i.fa.fa-user
+      = f.email_field :email, :autofocus => true, :class => "form-control", :placeholder => "E-mail"
+    .input-group.input-group-lg
+      span.input-group-addon
+        i.fa.fa-lock
+      = f.password_field :password, :class => "form-control", :placeholder => "Senha"
+    .form-group
+      = f.submit "Entrar", class: "btn btn-success btn-lg full-width"
