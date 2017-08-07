@@ -1,0 +1,32 @@
+.side-nav-block.padding-container
+  h4.title-sidebar Menu
+  ul.list-unstyled
+    li
+      = link_to "#", class: menu_active_for(:reports) do
+        i.fa.fa-signal
+        | Painel
+    li class="#{menu_active_for(:units)}"
+      = link_to "#" do
+        i.fa.fa-home
+        | Unidades
+    li class="#{menu_active_for(:teams)}"
+      = link_to "#" do
+        i.fa.fa-users
+        | Turmas
+    li
+      = link_to "#", class: menu_active_for(:teachers) do
+        i.fa.fa-file-text-o
+        | Professores    
+    li
+      = link_to "#", class: menu_active_for(:students) do
+        i.fa.fa-user
+        | Estudantes
+    li
+      = link_to "#", class: menu_active_for(:responsibles) do
+        i.fa.fa-user-o
+        | Responsáveis
+    hr.divider
+    li
+      = link_to destroy_user_session_path,  :method => :delete, data: { confirm: 'Deseja sair do sistema?' } do
+        i.fa.fa-sign-out
+        | Sair

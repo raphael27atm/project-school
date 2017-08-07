@@ -19,6 +19,47 @@ h1, h2, h3, h4, h5, h6 {
 .title{
   font-size: 2.8rem;
   line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.dashboard{
+  
+}
+
+.sidebar{
+  background: $violet;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  .title-sidebar{
+    color: $hover_link;
+    font-size: 2rem;
+  }
+  a{
+    color: #fff;
+    font-size: 1.6rem;
+    &:hover, &.active{
+      text-decoration: none;
+      cursor: pointer;
+      color: $hover_link;
+    }
+    i{
+      margin-right: 10px;
+    }
+  }
+}
+
+.main{
+  position: relative;
+}
+
+.box-white{
+  background: #fff;
+  padding: 20px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 //helpers
@@ -27,4 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .full-width{
   width: 100%;
+}
+.padding-container{
+  padding: 20px;
 }

@@ -18,6 +18,7 @@ gem 'will_paginate'
 gem 'geocoder'
 gem 'devise', '~> 4.2'
 gem 'slim-rails', '~> 3.1', '>= 3.1.1'
+gem "font-awesome-rails"
 
 # Env variables
 gem 'dotenv-rails'
