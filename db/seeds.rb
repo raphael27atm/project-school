@@ -4,20 +4,18 @@
 end
 
 # Admin
-User.create({
+User.create(
   name: "Marlon Raphael", 
   email: "admin@school.com.br", 
-  passwaord: "school", 
-  passwaord_confirmation: "school",
-  role: "admin"})
+  password: "school", 
+  password_confirmation: "school")
 
 # moderator  
-User.create({
+User.create(
   name: "Marlon Raphael", 
   email: "moderator@school.com.br", 
-  passwaord: "school", 
-  passwaord_confirmation: "school",
-  role: "moderator"})
+  password: "school", 
+  password_confirmation: "school")
 
 
 # School
