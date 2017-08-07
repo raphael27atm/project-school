@@ -6,9 +6,10 @@ class User < ApplicationRecord
   
   # relations
   belongs_to :role       
+  belongs_to :school
   before_create :set_default_role
   
-  validates :role, :name, presence: true
+  validates :role, :name, :school_id, presence: true
 
   private
   

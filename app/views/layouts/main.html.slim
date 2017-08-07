@@ -7,15 +7,16 @@ html class="no-js" lang=""
     meta name="viewport" content="width=device-width, initial-scale=1"
     link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"
     = stylesheet_link_tag 'application', :media => "all", 'data-turbolinks-track' => 'reload'
-    //script src="js/vendor/modernizr-2.8.3.min.js"
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     = csrf_meta_tags
   body
     .col-xs-12.col-md-3.sidebar
       = render "shared/sidebar"
     .col-xs-12.col-md-9.main.pull-right.dashboard
       .padding-container  
+        = render "shared/messages"
         = yield
-    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+    
 
 
 

@@ -19,6 +19,7 @@ gem 'geocoder'
 gem 'devise', '~> 4.2'
 gem 'slim-rails', '~> 3.1', '>= 3.1.1'
 gem "font-awesome-rails"
+gem 'simple_form'
 
 # Env variables
 gem 'dotenv-rails'

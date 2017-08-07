@@ -1,0 +1,245 @@
+pt-BR:
+  language_name: Português do Brasil
+# Controler name
+  smart_listing:
+    msgs:
+      destroy_confirmation: Destroy?
+      no_items: No items
+    actions:
+      destroy: Destroy
+      edit: Editar
+      show: Mostrar
+      new: Novo item
+  views:
+    pagination:
+      per_page: Por página
+      first: Primeira Página
+      previous: Voltar
+      next: Próximo
+      last: Última página
+  controller:
+    name:
+      ombudsmen: Ouvidorias
+      tickets: Ticket
+  date:
+    abbr_day_names:
+    - Dom
+    - Seg
+    - Ter
+    - Qua
+    - Qui
+    - Sex
+    - Sáb
+    abbr_month_names:
+      -
+      - Janeiro
+      - Fevereiro
+      - Março
+      - Abril
+      - Maio
+      - Junho
+      - Julho
+      - Agosto
+      - Setembro
+      - Outubro
+      - Novembro
+      - Dezembro
+    day_names:
+    - Domingo
+    - Segunda
+    - Terça
+    - Quarta
+    - Quinta
+    - Sexta
+    - Sábado
+    month_names:
+      January: Janeiro
+      February: Fevereiro
+      March: Março
+      April: Abril
+      May: Maio
+      June: Junho
+      July: Julho
+      August: Agosto
+      September: Setembro
+      October: Outubro
+      November: Novembro
+      December: Dezembro
+    month_names_number:
+      01: Janeiro
+      02: Fevereiro
+      03: Março
+      04: Abril
+      05: Maio
+      06: Junho
+      07: Julho
+      08: Agosto
+      09: Setembro
+      10: Outubro
+      11: Novembro
+      12: Dezembro
+# layouts/application
+  new_ticket: Novo Ticket
+  inbox: Caixa de Entrada
+  mine: Meu
+  closed_tickets: Fechado
+  trashed: Excluído
+  users: Usuário
+  rules: Regras
+  personal_settings: Configurações Pessoais
+  sign_out: Sair
+  delete: Remove
+  edit: Editar
+  save: Salvar
+  update: Atualizar
+  send: Enviar
+  back: Voltar
+# Adreess
+  city: Cidade
+  state: Estado
+  neighborhood: Bairro
+  forward: Encaminhar Manifestação
+
+  joyride:
+    tickets: Qualquer pessoa pode criar tickets usando este botão.
+    personal_settings: Defina sua assinatura, timezone e outras preferências via este menu.
+    labels: Depois de adicionar etiquetas para tickets ou usuários, eles aparecerão aqui. Você pode, em seguida, usá-los como filtros.
+    rules: Adicione, automaticamente, etiquetas, responsáveis, mudanças de status e muito mais.
+    users: Adicione mais agentes ou usuários normais.
+    final: Obrigado por usar o Particpar!
+    next: Próximo
+    previous: Anterior
+    end: Fim
+
+# devise/sessions/new
+  sign_in: Entrar no Sistema
+  enter: Entrar
+  filter: Filtrar
+# devise/shared/links
+  forgot_password: Esqueceu a senha?
+
+# devise/passwords/new
+  send_instructions: Envie-me instruções
+
+# devise/passwords/edit
+  change_password: Mudar senha
+  new_password: Nova senha
+  new_password_confirmation: Confirme nova senha
+# controllers/users
+  settings_saved: Configurações salvas
+  user_added: Usuário adicionado
+
+# controllers/tickets
+  ticket_added: Ticket adicionado
+  ticket_updated: Ticket atualizado
+
+# controllers/tickets/deleted
+  trash_emptied: Todos os tickets foram apagados da lixeira
+
+# controllers/replies
+  reply_added: Resposta adicionada
+
+# controllers/omniauth
+  already_linked_accounts: Já ligada à conta do Google
+  successfully_linked_account: Ligada à conta do Google com sucesso
+  not_linked_account_cant_login: Não há nenhum usuário conectado a este provedor ainda. Faça o login em primeiro lugar e conecte-se através da tela de configurações pessoais.
+  third_party_failure: Ocorreu um erro durante a autenticação. Você ativou o "Contatos API" e "API do Google+" através do console API do Google?
+
+# user/sign_in (omniauth)
+  omniauth_sign_in_title: Entrada alternativa
+  omniauth_sign_in_google: Google
+
+# rules/index
+  new_rule: Nova regra
+
+# rules/edit
+  edit_rule: Editar regra
+  delete_rule: Deletar regra
+  are_you_sure: Você tem certeza?
+
+# controllers/rules
+  rule_added: Regra adicionada
+  rule_modified: Regra adicionada
+  rule_deleted: Regra deletada
+
+# email_addresses/index
+  new_email_address: Novo endereço de e-mail de envio
+  email_addresses: Endereço de e-mail para envio de e-mails
+
+# email_addresses/new
+  verification_mail_will_be_sent: Certifique-se que este endereço de e-mail foi passado corretamente ao Participar. Um e-mail de verificação automatico será enviado quando você clicar em Salvar. Apenas endereços de e-mail verificados podem ser usados para mensagens de saída.
+  mark_spam_spf: Os e-mails do Participar poderão ser marcados como spam caso você não adicione este servidor para o registro SPF DNS  do endereço de e-mail acima.
+
+# controllers/email_addresses
+  email_address_added: Endereço de e-mail adicionado
+  email_address_removed: Endereço de e-mail removido
+
+# errors
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: deve ser aceito
+      blank: não pode ficar em branco
+      present: deve ficar em branco
+      confirmation: não é igual a %{attribute}
+      empty: não pode ficar vazio
+      equal_to: deve ser igual a %{count}
+      even: deve ser par
+      exclusion: não está disponível
+      greater_than: deve ser maior que %{count}
+      greater_than_or_equal_to: deve ser maior ou igual a %{count}
+      inclusion: não está incluído na lista
+      invalid: não é válido
+      less_than: deve ser menor que %{count}
+      less_than_or_equal_to: deve ser menor ou igual a %{count}
+      model_invalid: 'A validação falhou: %{errors}'
+      not_a_number: não é um número
+      not_an_integer: não é um número inteiro
+      odd: deve ser ímpar
+      required: é obrigatório(a)
+      taken: já está em uso
+      too_long:
+        one: 'é muito longo (máximo: 1 caracter)'
+        other: 'é muito longo (máximo: %{count} caracteres)'
+      too_short:
+        one: 'é muito curto (mínimo: 1 caracter)'
+        other: 'é muito curto (mínimo: %{count} caracteres)'
+      wrong_length:
+        one: não possui o tamanho esperado (1 caracter)
+        other: não possui o tamanho esperado (%{count} caracteres)
+      other_than: deve ser diferente de %{count}
+    template:
+      body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
+      header:
+        one: 'Não foi possível gravar %{model}: 1 erro'
+        other: 'Não foi possível gravar %{model}: %{count} erros'
+
+  
+  activerecord:
+    attributes:
+
+      models:
+        user: Usuário
+        unit: Unidade
+        school: Escole
+        team: Turma
+        student: Estudante
+        teacher: Professor
+        matriculation: Matricula
+        responsible: Resposável
+        address: Endereço
+        
+      user:
+        name: Nome
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirmação da senha
+        phone: Celular
+
+      unit:
+        name: Nome
+
+
+        
+      
+      
