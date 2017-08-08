@@ -3,7 +3,9 @@ class UnitsController < BaseController
   before_action :set_unit, except: [:index, :new, :create]
   
   def index
-    @units = Unit.all.includes(:students, :teams).order(id: :desc).paginate(:page => params[:page], :per_page => 15)
+    @units = current_school.units
+      .includes(:students, :teams)
+      .order(id: :desc).paginate(:page => params[:page], :per_page => 15)
   end
 
   def show

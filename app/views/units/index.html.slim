@@ -19,8 +19,8 @@
           tr id="unit_#{unit.id}"
             th scope="row" = unit.id
             td = unit.name
-            td = unit.teams.count
-            td = unit.students.count
+            td = unit.teams.size
+            td = unit.students.size
             td.text-center
               = link_to edit_unit_path(unit), class: "margin-right" do
                   button.btn.btn-primary
