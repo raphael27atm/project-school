@@ -19,6 +19,8 @@ RSpec.describe School, type: :model do
 
   describe 'validations shoulda matchers' do
     subject(:school) { create(:school)}
+    it { should have_many(:users) }
+    it { should have_many(:units) }
     it { is_expected.to validate_presence_of(:name)}
   end
      

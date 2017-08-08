@@ -20,6 +20,8 @@ RSpec.describe Matriculation, type: :model do
 
   describe 'validations shoulda matchers' do
     subject(:matriculation) { create(:matriculation, student_id: student.id, team_id: team.id)}
+    it { should belong_to(:student) }
+    it { should belong_to(:team) }
     it { is_expected.to validate_presence_of(:number)}
     it { is_expected.to validate_presence_of(:student_id)}
     it { is_expected.to validate_presence_of(:team_id)}

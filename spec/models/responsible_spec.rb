@@ -18,6 +18,7 @@ RSpec.describe Responsible, type: :model do
 
   describe 'validations shoulda matchers' do
     subject(:responsible) { create(:responsible)}
+    it { should belong_to(:student) }
     it { is_expected.to validate_presence_of(:name)}
     it { is_expected.to validate_presence_of(:student_id)}
   end

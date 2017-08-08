@@ -27,6 +27,7 @@ RSpec.describe User, type: :model do
 
   describe 'validations shoulda matchers' do
     subject(:user) { create(:user, role: role, school_id: school.id)}
+    it { should belong_to(:school) }
     it { is_expected.to validate_presence_of(:name)}
     it { is_expected.to validate_presence_of(:email)}
     it { is_expected.to validate_presence_of(:email)}
