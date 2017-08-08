@@ -3,18 +3,18 @@ h2.title Resumo
   table class="table table-striped"
     thead 
       tr 
-        th # 
-        th First Name
-        th Last Name
-        th Username
+        th Unidade
+        th Turmas
+        th Professores
+        th Alunos
+        th Responsáveis
     tbody 
-      tr 
-        th scope="row" 1
-        td Mark
-        td Otto 
-        td @mdo 
-      tr 
-        th scope="row" 2 
-        td Jacob 
-        td Thornton
-        td @fat
+      - @analytics.each do |school|
+        - school.units.each do |data|
+          tr 
+            th = data.name
+            th = data.teams.size
+            th = data.teachers.size
+            th = data.students.size
+            th = data.students.inject(0){|sum, s| sum + s.responsibles.size}
+          
