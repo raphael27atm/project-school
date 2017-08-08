@@ -1,0 +1,4 @@
+.form-group
+  = f.input :number
+  = f.input :student_id, collection: @team.unit.students.map{|s| [s.name, s.id] }
+  

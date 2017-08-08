@@ -1,8 +1,10 @@
-h2.title = @team.name
-.box-white
-  h3 Criar nova Matricula
-  = render 'form_matriculation'
-  hr
+.row
+  .col-md-6
+    h2.title = @team.name
+  .col-md-6
+    = link_to "Matricular estudantes", new_team_matriculation_path(@team), class: "btn btn-success pull-right"
+
+.box-white  
   h3 Alunos
   - if @matriculations.any?
     table class="table table-striped"
@@ -13,13 +15,16 @@ h2.title = @team.name
           th.percent-20.text-center Ação
       tbody 
         - @matriculations.each do |matriculation|
-          tr
+          tr id="matriculation_#{matriculation.id}"
             th = matriculation.id
             th = matriculation.student.name
             th.text-center
               = link_to student_path(matriculation.student), class: "margin-right" do
                 button.btn.btn-info
                   i.fa.fa-eye
+              = link_to team_matriculation_path(@team.id, matriculation.id), id: "link_trash_#{matriculation.id}" , :method => :delete, data: { confirm: 'Deseja deletar a matricula?'}do
+                  button.btn.btn-danger
+                    i.fa.fa-trash    
               
   - else
     .alert.alert-info

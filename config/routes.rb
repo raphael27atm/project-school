@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   resources :teachers, path: "professores"
   resources :responsibles, path: "responsaveis"
   resources :teams, path: "turmas" do 
-    post :matriculations
-    patch :cancel_matriculation
+    resources :matriculations, only: [:new, :create, :destroy]
   end
 end

@@ -7,7 +7,6 @@ class TeamsController < BaseController
   end
 
   def show
-    @matriculation = @team.matriculations.new
     @matriculations = Matriculation.where(team_id: params[:id])
   end
 

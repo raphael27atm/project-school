@@ -1,0 +1,6 @@
+h2.title Criar Matricula
+.box-white
+  = simple_form_for([@team, @matriculation], html: { class: 'form-horizontal' }) do |f|
+    = render 'form', f: f
+    = f.submit "Realizar Matricula", class: "btn btn-success margin-right"
+    = link_to "Voltar", :back, class: "btn btn-warning"  

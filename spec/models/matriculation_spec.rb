@@ -9,7 +9,7 @@ RSpec.describe Matriculation, type: :model do
     expect(matriculation).to be_persisted
   end
   
-  it 'is valid with valid atributes' do
+  it 'is valid with valid atributes' do 
     expect(matriculation).to be_valid
   end
 

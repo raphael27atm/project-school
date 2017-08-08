@@ -1,24 +1,43 @@
-# README
+> Web App Project School
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![](https://lh3.googleusercontent.com/TSuYl_73Ic7ZitWc2hbIsg-ft97jhDxV2RcBmqSCY8Y5kVNA448p88C-etCbqduaKr_jiCs9r57zKBA=w1316-h629-rw)
 
-Things you may want to cover:
+![](https://lh6.googleusercontent.com/dA5UWiSyoDXCeFnoAoXnxAQKuuVOJ0TCFzG5Y_f7xj3_nvbVsrolJjHItSXazLKfhlDIJ_9WQYuq-TQ=w1316-h629-rw)
 
-* Ruby version
+### Objetivo da Aplicação
 
-* System dependencies
+Criar uma aplicação básica de uma escola, onde a aplicação irá possuir as seguintes entidades:
 
-* Configuration
+* Escola
+* Unidade (Uma escola pode ter unidades educacionais em vários locais da cidade)
+* Turmas
+* Professores
+* Alunos (podem estar em várias turmas e pode ter vários responsáveis)
+* Responsáveis
+* Usuário da Escola (Usuário que vai fazer login na plataforma para ver as informações)
 
-* Database creation
+### Instalação
 
-* Database initialization
+Baixe o projeto ou faça a clonagem e siga os comandos:
+```
+cd <path>
+bundle install
+rails s
+```
 
-* How to run the test suite
+### Criando o banco e fazendo a migração de dados
+comando
+```
+rake db:create
+rake db:migrate
+rake db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Test Rspec
+comando
+```
+rspec
+```
+### Autenticação
+* email: moderator@school.com.br
+* senha: school
