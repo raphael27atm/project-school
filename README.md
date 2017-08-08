@@ -2,7 +2,7 @@
 
 ![](https://lh3.googleusercontent.com/TSuYl_73Ic7ZitWc2hbIsg-ft97jhDxV2RcBmqSCY8Y5kVNA448p88C-etCbqduaKr_jiCs9r57zKBA=w1316-h629-rw)
 
-![](https://lh4.googleusercontent.com/Ci-3ov1O9P7eupjC22nGiNdOZdupGurqHogn0oRD5run3wrd6m-erLMEPiSzZ3Z0IwEiqbW5y9jErmk=w1316-h678-rw)
+![](https://lh6.googleusercontent.com/ekNjNHRpXV-ALKovqcTqoXaHMqSappHLCziIrHALox77Fg0N1tcadWsfXCqxw_uaK3xazbhBPwG8Heg=w1316-h629-rw)
 
 ### Objetivo da Aplicação
 
