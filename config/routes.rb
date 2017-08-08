@@ -4,14 +4,12 @@ Rails.application.routes.draw do
     path: 'auth', 
     path_names: { 
       sign_in: 'login', 
-      sign_out: 'logout', 
-      password: 'secret', 
-      confirmation: 'verification', 
-      registration: 'register', 
-      sign_up: 'cmon_let_me_in' 
+      sign_out: 'logout'
     }
   root to: 'dashboard#index'  
 
+  resources :schools, path: "escolas"
+  resources :users, path: "usuarios" 
   resources :units, path: "unidades"
   resources :students, path: "estudantes"
   resources :teachers, path: "professores"

@@ -6,9 +6,6 @@ FactoryGirl.define do
     neighborhood 'Dionísio Torres'
     city "Fortaleza"
     state "CE"
-    latitude { -3.7430526 }
-    longitude { -3.7430526 }
-    #location [  -3.7430526, -38.5035642 ]
 
     [1, 2, 3, 4, 5].each do |n|
       trait :"km_#{n}" do

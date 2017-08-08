@@ -1,0 +1,39 @@
+.row
+  .col-md-6
+    h2.title Usuários
+  .col-md-6
+    = link_to "Adicionar novo usuário", new_user_path, class: "btn btn-success pull-right"
+
+.box-white
+  - if @users.any?
+    table class="table table-striped"
+      thead 
+        tr 
+          th # 
+          th Nome
+          th Email
+          th Escola
+          th Tipo de acesso
+          th.percent-20.text-center Ação
+      tbody 
+        - @users.each do |user|
+          tr id="user_#{user.id}"
+            th scope="row" = user.id
+            td = user.name
+            td = user.email
+            td = user.school.name
+            td = user.role.name
+            td.text-center
+              = link_to user_path(user), class: "margin-right" do
+                  button.btn.btn-info
+                    i.fa.fa-eye
+              = link_to edit_user_path(user), class: "margin-right" do
+                  button.btn.btn-primary
+                    i.fa.fa-edit
+              
+      tfoot
+        = will_paginate @users, renderer: BootstrapPagination::Rails               
+  - else
+    .alert.alert-info
+      | Não existe nenhum usuário cadastrado
+

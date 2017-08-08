@@ -1,0 +1,15 @@
+h2.title = @user.name
+.box-white
+  table class="table table-striped"
+      thead 
+        tr 
+          th email
+          th Escola
+          th Tipo de acesso
+      tbody 
+        tr
+          td = @user.email
+          td = @user.school.name
+          td = @user.role.name
+  
+  = link_to "Voltar", :back, class: "btn btn-warning"

@@ -1,4 +1,5 @@
 class Team < ApplicationRecord
+  include SelectForSchool
   # relations
   belongs_to :unit
   has_many :matriculations

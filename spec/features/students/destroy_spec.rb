@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'rails_helper' 
 
 describe "Deleting unit" do
   let(:user) { create(:user) }
@@ -10,8 +10,8 @@ describe "Deleting unit" do
 
   it "is successful" do
     visit students_path
-
-    within "#student_#{@student.id}" do
+    
+    within "tr#student_#{@student.id}" do
       find("#link_trash_#{@student.id}").click
     end 
 

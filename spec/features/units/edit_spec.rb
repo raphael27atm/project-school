@@ -11,12 +11,6 @@ describe "Editing units" do
   end
 
   it "is successful with valid content" do
-    visit units_path
-    
-    within("#unit_#{@unit.id}") do
-      find(".fa-edit").click
-    end
-    
     visit edit_unit_path(@unit)
     
     fill_in "unit_name", with: "Nome Editado"

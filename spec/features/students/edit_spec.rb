@@ -10,12 +10,6 @@ describe "Editing students" do
   end
 
   it "is successful with valid content" do
-    visit students_path
-    
-    within("#student_#{@student.id}") do
-      find(".fa-edit").click
-    end
-    
     visit edit_student_path(@student)
     
     find("#student_name", "Nome Editado")

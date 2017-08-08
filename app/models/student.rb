@@ -1,4 +1,5 @@
 class Student < ApplicationRecord
+  include SelectForSchool
   # relations
   belongs_to :unit
   has_many :responsibles

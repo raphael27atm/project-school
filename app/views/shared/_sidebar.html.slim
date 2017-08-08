@@ -6,6 +6,10 @@
         i.fa.fa-signal
         | Painel
     li class="#{menu_active_for(:units)}"
+      = link_to schools_path do
+        i.fa.fa-sitemap
+        | Escolas
+    li class="#{menu_active_for(:units)}"
       = link_to units_path do
         i.fa.fa-home
         | Unidades
@@ -19,12 +23,16 @@
         | Professores    
     li
       = link_to students_path, class: menu_active_for(:students) do
-        i.fa.fa-user
+        i.fa.fa-address-card
         | Estudantes
     li
       = link_to responsibles_path, class: menu_active_for(:responsibles) do
         i.fa.fa-user-o
         | Responsáveis
+    li
+      = link_to users_path, class: menu_active_for(:users) do
+        i.fa.fa-user
+        | Usuários      
     hr.divider
     li
       = link_to destroy_user_session_path,  :method => :delete, data: { confirm: 'Deseja sair do sistema?' } do

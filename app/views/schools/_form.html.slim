@@ -1,0 +1,19 @@
+.form-group
+  = f.input :name
+  = f.simple_fields_for :address, @school.address || @school.build_address do |t|
+    .row
+      .col-sx-6.col-sm-6
+        = t.input :state, collection: STATES
+      .col-sx-6.col-sm-6
+        = t.input :city
+      .col-sx-6.col-sm-8
+        = t.input :street
+      .col-sx-6.col-sm-4  
+        = t.input :number
+      .col-sx-6.col-sm-6
+        = t.input :complement
+      .col-sx-6.col-sm-6
+        = t.input :neighborhood
+
+
+

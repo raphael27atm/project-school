@@ -1,44 +1,44 @@
 require 'rails_helper'
 
-describe "Editing students" do
+describe "Editing responsibles" do
   let(:user) { create(:user) }
-  let(:unit) { create(:unit) }
+  let(:student) { create(:student) }
   
   before(:each) do 
     sign_in_user(user)
-    @student = create(:student, unit_id: unit.id)
+    @responsible = create(:responsible, student_id: student.id)
   end
 
   it "is successful with valid content" do
-    visit students_path
+    visit responsibles_path
     
-    within("#student_#{@student.id}") do
+    within("#responsible_#{@responsible.id}") do
       find(".fa-edit").click
     end
     
-    visit edit_student_path(@student)
+    visit edit_responsible_path(@responsible)
     
-    find("#student_name", "Nome Editado")
-    find(:css, "select#student_unit_id").set(@student.unit_id)
+    find("#responsible_name", "Nome Editado")
+    find(:css, "select#responsible_student_id").set(@responsible.student_id)
    
     click_button "Editar"
   
-    expect(page).to have_content("Unidade não pode ficar em brancoT")
+    expect(page).to have_content("Adicionar novo resposável")
   
   end
 
   it "is unsuccessful with no content" do
-    visit edit_student_path(@student)
+    visit edit_responsible_path(@responsible)
 
-    fill_in "student_name", with: ""
+    fill_in "responsible_name", with: ""
     
     click_button "Editar"
 
-    expect(page).to_not have_content("Estudante editado com sucesso")
-    expect(page).to have_content("Erro ao editar o estudante")
+    expect(page).to_not have_content("Resposǘel editado com sucesso")
+    expect(page).to have_content("Erro ao editar o responsável")
     
-    @student.reload
-    expect(@student.name).to eq(@student.name)
+    @responsible.reload
+    expect(@responsible.name).to eq(@responsible.name)
   end
 
 end

@@ -3,7 +3,7 @@ class TeachersController < BaseController
   before_action :set_teacher, except: [:index, :new, :create]
   
   def index
-    @teachers = Teacher.all.includes(:unit)
+    @teachers = Teacher.select_data(current_school.id)
       .order(id: :desc).paginate(:page => params[:page], :per_page => 5)
   end
 

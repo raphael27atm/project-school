@@ -21,7 +21,7 @@ describe "Adding units" do
     fill_in "unit_address_attributes_neighborhood", with: address.neighborhood
     fill_in "unit_address_attributes_complement", with: address.complement
     click_button "Salvar"
-    
+     
     expect(page).to have_content("Unidades")
     
   end
