@@ -7,6 +7,7 @@ class StudentsController < BaseController
   end
 
   def show
+    @matriculations = Matriculation.where(student_id: params[:id])
   end
 
   def new

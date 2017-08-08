@@ -9,7 +9,29 @@ h2.title = @student.name
         tr
           td = @student.age
           td = @student.phone
-          
+  hr
+  h3 Turmas Matriculadas
+  - if @matriculations.any?
+    table class="table table-striped"
+      thead 
+        tr 
+          th # 
+          th Turmas
+          th.percent-20.text-center Ação
+      tbody 
+        - @matriculations.each do |matriculation|
+          tr
+            th = matriculation.id
+            th = matriculation.team.name
+            th.text-center
+              = link_to team_path(matriculation.team), class: "margin-right" do
+                button.btn.btn-info
+                  i.fa.fa-eye
+  - else
+    .alert.alert-info
+      | Não existe nenhuma para essa turma
+
+  hr        
   h3 Responsáveis
   - if @student.responsibles.any?
     table class="table table-striped"

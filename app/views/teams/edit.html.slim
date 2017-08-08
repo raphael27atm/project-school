@@ -1,0 +1,6 @@
+h2.title Editar Turma
+.box-white
+  = simple_form_for(@team, html: { class: 'form-horizontal' }) do |f|
+    = render 'form', f: f
+    = f.submit "Editar", class: "btn btn-success margin-right"
+    = link_to "Voltar", :back, class: "btn btn-warning"  

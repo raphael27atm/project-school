@@ -1,0 +1,35 @@
+.row
+  .col-md-6
+    h2.title Turmas
+  .col-md-6
+    = link_to "Adicionar nova turma", new_team_path, class: "btn btn-success pull-right"
+
+.box-white
+  - if @teams.any?
+    table class="table table-striped"
+      thead 
+        tr 
+          th # 
+          th Nome
+          th Unidade
+          th.percent-20.text-center Ação
+      tbody 
+        - @teams.each do |team|
+          tr id="team_#{team.id}"
+            th scope="row" = team.id
+            td = team.name
+            td = team.unit.name
+            td.text-center
+              = link_to team_path(team), class: "margin-right" do
+                  button.btn.btn-info
+                    i.fa.fa-eye
+              = link_to edit_team_path(team), class: "margin-right" do
+                  button.btn.btn-primary
+                    i.fa.fa-edit
+              = link_to team_path(team), id: "link_trash_#{team.id}" , :method => :delete, data: { confirm: 'Deseja deletar turma?'}do
+                  button.btn.btn-danger
+                    i.fa.fa-trash
+  - else
+    .alert.alert-info
+      | Não existe nenhuma turma cadastrada
+

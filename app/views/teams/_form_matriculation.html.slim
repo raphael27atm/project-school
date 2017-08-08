@@ -1,0 +1,7 @@
+= simple_form_for(@matriculation, url: team_matriculations_path(@team), html: { :method => :post, class: 'form-horizontal' }) do |f|
+  .form-group
+    = f.input :number
+    = f.input :student_id, collection: @team.unit.students.map{|s| [s.name, s.id] }
+    = f.submit "Realizar Matricula", class: "btn btn-success margin-right"
+  
+
