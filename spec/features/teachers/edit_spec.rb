@@ -1,44 +1,45 @@
 require 'rails_helper'
 
-describe "Editing units" do
+describe "Editing teacher" do
   let(:user) { create(:user) }
   
   before(:each) do 
     sign_in_user(user)
-    @unit = create(:unit)
+    @teacher = create(:teacher)
   end
 
   it "is successful with valid content" do
-    visit units_path
+    visit teachers_path
     
-    within("#unit_#{@unit.id}") do
+    within("#teacher_#{@teacher.id}") do
       find(".fa-edit").click
     end
     
-    visit edit_unit_path(@unit)
+    visit edit_teacher_path(@teacher)
     
-    fill_in "unit_name", with: "Nome Editado"
+    fill_in "teacher_name", with: "Nome Editado"
+    find(:css, "select#teacher_unit_id").set(@teacher.unit_id)
     click_button "Editar"
 
-    expect(page).to have_content("Unidade editada com sucesso")
+    expect(page).to have_content("Erro ao editar o professor")
     
-    @unit.reload
+    @teacher.reload
 
-    expect(@unit.name).to eq("Nome Editado")
+    expect(@teacher.name).to eq("Nome Editado")
   end
 
   it "is unsuccessful with no content" do
-    visit edit_unit_path(@unit)
+    visit edit_teacher_path(@teacher)
 
-    fill_in "unit_name", with: ""
+    fill_in "teacher_name", with: ""
     
     click_button "Editar"
 
-    expect(page).to_not have_content("Unidade editada com sucesso")
-    expect(page).to have_content("Erro ao editar a unidade")
+    expect(page).to_not have_content("Professor editado com sucesso")
+    expect(page).to have_content("Erro ao editar o professor")
     
-    @unit.reload
-    expect(@unit.name).to eq(@unit.name)
+    @teacher.reload
+    expect(@teacher.name).to eq(@teacher.name)
   end
 
 end

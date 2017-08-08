@@ -1,0 +1,28 @@
+h2.title = @team.name
+.box-white
+  h3 Criar nova Matricula
+  = render 'form_matriculation'
+  hr
+  h3 Alunos
+  - if @matriculations.any?
+    table class="table table-striped"
+      thead 
+        tr 
+          th # 
+          th Nome
+          th.percent-20.text-center Ação
+      tbody 
+        - @matriculations.each do |matriculation|
+          tr
+            th = matriculation.id
+            th = matriculation.student.name
+            th.text-center
+              = link_to student_path(matriculation.student), class: "margin-right" do
+                button.btn.btn-info
+                  i.fa.fa-eye
+              
+  - else
+    .alert.alert-info
+      | Não existe nenhuma para essa turma
+
+  = link_to "Voltar", :back, class: "btn btn-warning"
