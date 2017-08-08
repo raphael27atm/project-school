@@ -26,6 +26,8 @@
               = link_to responsible_path(responsible), id: "link_trash_#{responsible.id}" , :method => :delete, data: { confirm: 'Deseja deletar estudante?'}do
                   button.btn.btn-danger
                     i.fa.fa-trash
+      tfoot
+        = will_paginate @responsibles, renderer: BootstrapPagination::Rails              
   - else
     .alert.alert-info
       | Não existe nenhum estudante cadastrado

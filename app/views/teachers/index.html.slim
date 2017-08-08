@@ -29,6 +29,9 @@
               = link_to teacher_path(teacher), id: "link_trash_#{teacher.id}" , :method => :delete, data: { confirm: 'Deseja deletar professor?'}do
                   button.btn.btn-danger
                     i.fa.fa-trash
+      tfoot
+        = will_paginate @teachers, renderer: BootstrapPagination::Rails 
+        
   - else
     .alert.alert-info
       | Não existe nenhum Professor cadastrado

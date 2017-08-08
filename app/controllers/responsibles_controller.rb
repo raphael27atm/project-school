@@ -3,7 +3,7 @@ class ResponsiblesController < BaseController
   before_action :set_responsible, except: [:index, :new, :create]
   
   def index
-    @responsibles = Responsible.all.includes(:student).order(id: :desc).paginate(:page => params[:page], :per_page => 15)
+    @responsibles = Responsible.all.includes(:student).order(id: :desc).paginate(:page => params[:page], :per_page => 5)
   end
 
   def show

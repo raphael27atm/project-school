@@ -5,7 +5,7 @@ class UnitsController < BaseController
   def index
     @units = current_school.units
       .includes(:students, :teams)
-      .order(id: :desc).paginate(:page => params[:page], :per_page => 15)
+      .order(id: :desc).paginate(:page => params[:page], :per_page => 5)
   end
 
   def show

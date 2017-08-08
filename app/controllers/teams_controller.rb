@@ -3,7 +3,7 @@ class TeamsController < BaseController
   before_action :set_team, except: [:index, :new, :create, :matriculations]
   
   def index
-    @teams = Team.all.includes(:unit).order(id: :desc).paginate(:page => params[:page], :per_page => 15)
+    @teams = Team.all.includes(:unit).order(id: :desc).paginate(:page => params[:page], :per_page => 5)
   end
 
   def show

@@ -3,7 +3,7 @@ class StudentsController < BaseController
   before_action :set_student, except: [:index, :new, :create]
   
   def index
-    @students = Student.all.includes(:unit).order(id: :desc).paginate(:page => params[:page], :per_page => 15)
+    @students = Student.all.includes(:unit).order(id: :desc).paginate(:page => params[:page], :per_page => 5)
   end
 
   def show

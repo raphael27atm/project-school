@@ -24,7 +24,9 @@
                   i.fa.fa-eye
               = link_to team_matriculation_path(@team.id, matriculation.id), id: "link_trash_#{matriculation.id}" , :method => :delete, data: { confirm: 'Deseja deletar a matricula?'}do
                   button.btn.btn-danger
-                    i.fa.fa-trash    
+                    i.fa.fa-trash 
+      tfoot
+        = will_paginate @matriculations, renderer: BootstrapPagination::Rails                  
               
   - else
     .alert.alert-info

@@ -29,6 +29,8 @@
               = link_to team_path(team), id: "link_trash_#{team.id}" , :method => :delete, data: { confirm: 'Deseja deletar turma?'}do
                   button.btn.btn-danger
                     i.fa.fa-trash
+      tfoot
+        = will_paginate @teams, renderer: BootstrapPagination::Rails              
   - else
     .alert.alert-info
       | Não existe nenhuma turma cadastrada
