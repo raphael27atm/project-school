@@ -119,7 +119,7 @@ end
 # Teachers Center
 5.times do |n|
   @teachers << Teacher.create(
-    name: Faker::Name.unique.name,
+    name: "Professor C #{n}",
     unit_id: @unit_center.sample.id
   )
   puts " Added Teacher #{n}"
@@ -128,7 +128,7 @@ end
 # Teachers Primary
 23.times do |n|
   @teachers << Teacher.create(
-    name: Faker::Name.unique.name,
+    name: "Professor P #{n}",
     unit_id: @unit_primary.sample.id
   )
   puts " Added Teacher #{n}"
@@ -137,7 +137,7 @@ end
 # Teachers Baby
 5.times do |n|
   @teachers << Teacher.create(
-    name: Faker::Name.unique.name,
+    name: "Professor B #{n}",
     unit_id: @unit_baby.sample.id
   )
   puts " Added Teacher #{n}"
@@ -146,7 +146,7 @@ end
 # Teachers South
 20.times do |n|
   @teachers << Teacher.create(
-    name: Faker::Name.unique.name,
+    name: "Professor S #{n}",
     unit_id: @unit_south.sample.id
   )
   puts " Added Teacher #{n}"
@@ -157,20 +157,20 @@ end
 # Students Primary
 250.times do |n|
   @students_primary << Student.create(
-    name: Faker::Name.unique.name,
+    name: "Aluno P #{n}",
     age: 10,
-    phone: Faker::PhoneNumber.phone_number,
+    phone: "(85) #{rand(10 ** 10)}",
     unit_id: @unit_primary.sample.id
   )
   puts " Added Student #{n}"
 end
 
-# Students Babey
+# Students Baby
 15.times do |n|
   @students_baby<< Student.create(
-    name: Faker::Name.unique.name,
+    name: "Aluno B #{n}",
     age: 5,
-    phone: Faker::PhoneNumber.phone_number,
+    phone: "(85) #{rand(10 ** 10)}",
     unit_id: @unit_baby.sample.id
   )
   puts " Added Student #{n}"
@@ -179,9 +179,9 @@ end
 # Students South
 50.times do |n|
   @students_south << Student.create(
-    name: Faker::Name.unique.name,
+    name: "Aluno S #{n}",
     age: 15,
-    phone: Faker::PhoneNumber.phone_number,
+    phone: "(85) #{rand(10 ** 10)}",
     unit_id: @unit_south.sample.id
   )
   puts " Added Student #{n}"
@@ -190,9 +190,9 @@ end
 # Students Center
 40.times do |n|
   @students_center << Student.create(
-    name: Faker::Name.unique.name,
+    name: "Aluno C #{n}",
     age: 15,
-    phone: Faker::PhoneNumber.phone_number,
+    phone: "(85) #{rand(10 ** 10)}",
     unit_id: @unit_center.sample.id
   )
   puts " Added Student #{n}"
@@ -201,7 +201,7 @@ end
 # Responsible primary
 500.times do |n|
   @responsibles << Responsible.create(
-    name: Faker::Name.unique.name,
+    name: "Resposável P #{n}",
     student_id: @students_primary.sample.id
   )
   puts " Added Responsible #{n}"
@@ -210,7 +210,7 @@ end
 # Responsible baby
 30.times do |n|
   @responsibles << Responsible.create(
-    name: Faker::Name.unique.name,
+    name: "Resposável B #{n}",
     student_id: @students_baby.sample.id
   )
   puts " Added Responsible #{n}"
@@ -219,7 +219,7 @@ end
 # Responsible south
 100.times do |n|
   @responsibles << Responsible.create(
-    name: Faker::Name.unique.name,
+    name: "Resposável S #{n}",
     student_id: @students_south.sample.id
   )
   puts " Added Responsible #{n}"
@@ -228,7 +228,7 @@ end
 # Responsible center
 80.times do |n|
   @responsibles << Responsible.create(
-    name: Faker::Name.unique.name,
+    name: "Resposável C #{n}",
     student_id: @students_center.sample.id
   )
   puts " Added Responsible #{n}"
@@ -237,7 +237,7 @@ end
 # Matriculation Prymary
 100.times do |n|
   @matriculations << Matriculation.create(
-    number: Faker::Number.number(10),
+    number: rand(10 ** 10),
     student_id: @students_primary.sample.id,
     team_id: @teams_primary.sample.id
   )
@@ -247,7 +247,7 @@ end
 # Matriculation Baby
 50.times do |n|
   @matriculations << Matriculation.create(
-    number: Faker::Number.number(10),
+    number: rand(10 ** 10),
     student_id: @students_baby.sample.id,
     team_id: @teams_baby.sample.id
   )
@@ -257,7 +257,7 @@ end
 # Matriculation South
 50.times do |n|
   @matriculations << Matriculation.create(
-    number: Faker::Number.number(10),
+    number: rand(10 ** 10),
     student_id: @students_south.sample.id,
     team_id: @teams_south.sample.id
   )
