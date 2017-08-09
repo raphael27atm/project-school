@@ -1,8 +1,8 @@
 > Web App Project School
 
-![](https://lh3.googleusercontent.com/TSuYl_73Ic7ZitWc2hbIsg-ft97jhDxV2RcBmqSCY8Y5kVNA448p88C-etCbqduaKr_jiCs9r57zKBA=w1316-h629-rw)
+![](http://encurtador.com.br/chnwL)
 
-![](https://lh3.googleusercontent.com/HnDbJzB_ir47Gh-i2IP4LjReEmWSglsqRQv2JSlX97RQzUWEaSqCQsJjKplAa4RYgdBaJnmHmtH1mgg=w1316-h629-rw)
+![](http://encurtador.com.br/cxD45)
 
 ### Objetivo da Aplicação
 
