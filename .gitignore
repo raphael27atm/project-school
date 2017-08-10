@@ -24,3 +24,5 @@ docker-compose.yml
 
 # ENV
 .env
+
+coverage

@@ -27,21 +27,6 @@ class TeamsController < BaseController
     end
   end
 
-  def matriculations
-    @matriculation = Matriculation.new(matriculation_params)
-    @matriculation.team_id = params[:team_id]
-    if @matriculation.save
-      flash[:notice] = 'Matricula realizada com sucesso'
-      redirect_to team_path(@matriculation.team_id)
-    else
-      flash[:error] = "Foi encontrado os sequintes erros: #{@matriculation.errors.full_messages }"
-      render team_path(params[:team_id])
-    end
-  end
-
-  def cancel_matriculation
-  end
-
   def edit
   end
 

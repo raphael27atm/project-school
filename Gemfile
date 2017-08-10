@@ -42,6 +42,7 @@ group :test do
   gem 'launchy'
   gem 'poltergeist'
   gem "webmock"
+  gem 'simplecov', :require => false
 end
 
 group :development do
