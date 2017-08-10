@@ -1,4 +1,5 @@
 > Web App Project School
+{<img src="https://codeclimate.com/github/raphael27atm/project-school/badges/gpa.svg" />}[https://codeclimate.com/github/raphael27atm/project-school]
 
 ![](http://secaoweb.com.br/wp-content/uploads/2017/08/login.png)
 
