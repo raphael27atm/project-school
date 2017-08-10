@@ -16,6 +16,6 @@ describe "Deleting teacher" do
       find("#link_trash_#{@teacher.id}").click
     end 
 
-    expect(page).to have_content("Professor foi deletado.")
+    expect(page).to have_content("Professor foi removido com sucesso.")
   end
 end

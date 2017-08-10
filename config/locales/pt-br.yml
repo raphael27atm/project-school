@@ -219,19 +219,17 @@ pt-BR:
     errors:
       messages:
         record_invalid: "Validation failed: %{errors}"
+    models:
+      user: Usuário
+      unit: Unidade
+      school: Escola
+      team: Turma
+      student: Estudante
+      teacher: Professor
+      matriculation: Matricula
+      responsible: Responsável
+      address: Endereço    
     attributes:
-
-      models:
-        user: Usuário
-        unit: Unidade
-        school: Escole
-        team: Turma
-        student: Estudante
-        teacher: Professor
-        matriculation: Matricula
-        responsible: Resposável
-        address: Endereço
-        
       user:
         name: Nome
         email: E-mail

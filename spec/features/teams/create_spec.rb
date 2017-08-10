@@ -27,8 +27,9 @@ describe "Adding teams" do
     fill_in "team_name", with: unit.name
     find("#team_unit_id", unit.id)
     click_button "Salvar"
-    within("div.alert") do
-      expect(page).to have_content("Foi encontrado os sequintes erros: [\"Unit é obrigatório(a)\", \"Unit não pode ficar em branco\"]")
+    
+    within(".help-block") do
+      expect(page).to have_content("não pode ficar em branco")
     end
   end
 

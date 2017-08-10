@@ -16,6 +16,6 @@ describe "Deleting team" do
       find("#link_trash_#{@team.id}").click
     end 
  
-    expect(page).to have_content("Turma foi deletada.")
+    expect(page).to have_content("Turma foi removido com sucesso.")
   end
 end

@@ -16,6 +16,6 @@ describe "Deleting responsible" do
       find("#link_trash_#{@responsible.id}").click
     end  
     
-    expect(page).to have_content("O responsável foi deletado.")
+    expect(page).to have_content("Responsável foi removido com sucesso.")
   end
 end

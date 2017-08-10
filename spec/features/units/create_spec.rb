@@ -33,9 +33,8 @@ describe "Adding units" do
     fill_in "unit_address_attributes_city", with: ""
     fill_in "unit_address_attributes_number", with: ""
     click_button "Salvar"
-    within("div.alert") do
-      expect(page).to have_content("Foi encontrado os sequintes erros: [\"Address number não pode ficar em branco\"")
-    end
+    
+    expect(page).to have_content("não pode ficar em branco")
   end
 
 end

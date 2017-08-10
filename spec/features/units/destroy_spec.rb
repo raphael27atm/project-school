@@ -15,6 +15,6 @@ describe "Deleting unit" do
       find("#link_trash_#{@unit.id}").click
     end 
 
-    expect(page).to have_content("Unidade foi deletada.")
+    expect(page).to have_content("Unidade foi removido com sucesso")
   end
 end

@@ -5,6 +5,7 @@ class TeachersController < BaseController
   def index
     @teachers = Teacher.select_data(current_school.id)
       .order(id: :desc).paginate(:page => params[:page], :per_page => 5)
+    respond_with(@teachers)
   end
 
   def show
@@ -15,36 +16,21 @@ class TeachersController < BaseController
   end
 
   def create
-    @teacher = Teacher.new(teacher_params)
-    if @teacher.save
-      flash[:notice] = 'Professor adicionado com sucesso'
-      redirect_to action: :index
-    else
-      flash[:error] = "Foi encontrado os sequintes erros: #{@teacher.errors.full_messages }"
-      render :new
-    end
+    @teacher = Teacher.create(teacher_params)
+    respond_with(@teacher)
   end
 
   def edit
   end
 
   def update
-    if @teacher.update_attributes(teacher_params)
-      flash[:notice] = 'Professor editado com sucesso'
-      redirect_to action: :index
-    else
-      flash[:error] = 'Erro ao editar o professor'
-      render :edit
-    end
+    @teacher.update_attributes(teacher_params)
+    respond_with(@teacher)
   end
 
   def destroy
-    if @teacher.destroy
-      flash[:notice] = "Professor foi deletado."
-    else
-      flash[:error] = "Não foi possvel deletar o professor."
-    end
-    redirect_to teachers_path
+    @teacher.destroy
+    respond_with(@teacher)
   end
 
   private

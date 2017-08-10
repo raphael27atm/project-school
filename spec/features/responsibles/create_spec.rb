@@ -25,8 +25,9 @@ describe "Adding responsible" do
     fill_in "responsible_name", with: responsible.name
     find("#responsible_student_id", student.id)
     click_button "Salvar"
-    within("div.alert") do
-      expect(page).to have_content("Foi encontrado os sequintes erros: [\"Student é obrigatório(a)\", \"Student não pode ficar em branco\"]")
+    
+    within(".help-block") do
+      expect(page).to have_content("não pode ficar em branco")
     end
   end
 

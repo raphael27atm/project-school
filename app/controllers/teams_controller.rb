@@ -5,6 +5,7 @@ class TeamsController < BaseController
   def index
     @teams = Team.select_data(current_school.id)
       .order(id: :desc).paginate(:page => params[:page], :per_page => 5)
+    respond_with(@teams)
   end
 
   def show
@@ -17,36 +18,21 @@ class TeamsController < BaseController
   end
 
   def create
-    @team = Team.new(team_params)
-    if @team.save
-      flash[:notice] = 'Turma adicionada com sucesso'
-      redirect_to action: :index
-    else
-      flash[:error] = "Foi encontrado os sequintes erros: #{@team.errors.full_messages }"
-      render :new
-    end
+    @team = Team.create(team_params)
+    respond_with(@team)
   end
 
   def edit
   end
 
   def update
-    if @team.update_attributes(team_params)
-      flash[:notice] = 'Turma editada com sucesso'
-      redirect_to action: :index
-    else
-      flash[:error] = 'Erro ao editar turma'
-      render :edit
-    end
+    @team.update_attributes(team_params)
+    respond_with(@team)
   end
 
   def destroy
-    if @team.destroy
-      flash[:notice] = "A Turma foi deletada."
-    else
-      flash[:error] = "Não foi possvel deletar a turma."
-    end
-    redirect_to teams_path
+    @team.destroy
+    respond_with(@team)
   end
 
   private

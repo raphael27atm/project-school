@@ -23,7 +23,7 @@ describe "Editing teams" do
    
     click_button "Editar"
   
-    expect(page).to have_content("Turma editada com sucesso")
+    expect(page).to have_content("Turma foi atualizado com sucesso.")
   
   end
 
@@ -34,8 +34,7 @@ describe "Editing teams" do
     
     click_button "Editar"
 
-    expect(page).to_not have_content("Turma editada com sucesso")
-    expect(page).to have_content("Erro ao editar turma")
+    expect(page).to have_content("não pode ficar em branco")
     
     @team.first.reload
     expect(@team.first.name).to eq(@team.first.name)

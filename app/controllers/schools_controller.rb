@@ -5,6 +5,7 @@ class SchoolsController < BaseController
   def index
     @schools = School.order(id: :desc)
       .paginate(:page => params[:page], :per_page => 5)
+    respond_with(@schools)
   end
 
   def show
@@ -15,27 +16,16 @@ class SchoolsController < BaseController
   end
 
   def create
-    @school = School.new(school_params)
-    if @school.save
-      flash[:notice] = 'Escola criada com sucesso'
-      redirect_to action: :index
-    else
-      flash[:error] = "Foi encontrado os sequintes erros: #{@school.errors.full_messages }"
-      render :new
-    end
+    @school = School.create(school_params)
+    respond_with(@school)
   end
 
   def edit
   end
 
   def update
-    if @school.update_attributes(school_params)
-      flash[:notice] = 'Escola editada com sucesso'
-      redirect_to action: :index
-    else
-      flash[:error] = 'Erro ao editar escola'
-      render :edit
-    end
+    @school.update_attributes(school_params)
+    respond_with(@school)
   end
 
   private

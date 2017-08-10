@@ -5,6 +5,7 @@ class StudentsController < BaseController
   def index
     @students = Student.select_data(current_school.id)
       .order(id: :desc).paginate(:page => params[:page], :per_page => 5)
+    respond_with(@students)
   end
 
   def show
@@ -16,36 +17,21 @@ class StudentsController < BaseController
   end
 
   def create
-    @student = Student.new(student_params)
-    if @student.save
-      flash[:notice] = 'Estudante adicionado com sucesso'
-      redirect_to action: :index
-    else
-      flash[:error] = "Foi encontrado os sequintes erros: #{@student.errors.full_messages }"
-      render :new
-    end
+    @student = Student.create(student_params)
+    respond_with(@student)
   end
 
   def edit
   end
 
   def update
-    if @student.update_attributes(student_params)
-      flash[:notice] = 'Estudante editado com sucesso'
-      redirect_to action: :index
-    else
-      flash[:error] = 'Erro ao editar o estudante'
-      render :edit
-    end
+    @student.update_attributes(student_params)
+    respond_with(@student)
   end
 
   def destroy
-    if @student.destroy
-      flash[:notice] = "O Estudante foi deletado."
-    else
-      flash[:error] = "Não foi possvel deletar o estudante."
-    end
-    redirect_to students_path
+    @student.destroy
+    respond_with(@student, :location => students_path)
   end
 
   private

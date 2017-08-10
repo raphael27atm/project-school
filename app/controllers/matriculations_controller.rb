@@ -5,16 +5,18 @@ class MatriculationsController < BaseController
   
   def new
     @matriculation = Matriculation.new
+    respond_with(@matriculation)
   end
 
   def create
     @matriculation = Matriculation.new(matriculation_params)
     @matriculation.team_id = @team.id
+    
     if @matriculation.save
       flash[:notice] = 'Matricula realizada com sucesso'
       redirect_to team_path(@matriculation.team_id)
     else
-      flash[:error] = "Foi encontrado os sequintes erros: #{@matriculation.errors.full_messages }"
+      flash[:error] = "Foi encontrado os sequintes erros: #{@matriculation.errors.full_messages.to_sentence }"
       render :new
     end
   end

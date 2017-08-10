@@ -23,7 +23,7 @@ describe "Editing responsibles" do
    
     click_button "Editar"
   
-    expect(page).to have_content("Responsável editado com sucesso")
+    expect(page).to have_content("Responsável foi atualizado com sucesso")
   
   end
 
@@ -34,8 +34,7 @@ describe "Editing responsibles" do
     
     click_button "Editar"
 
-    expect(page).to_not have_content("Resposǘel editado com sucesso")
-    expect(page).to have_content("Erro ao editar o responsável")
+    expect(page).to have_content("não pode ficar em branco")
     
     @responsible.reload
     expect(@responsible.name).to eq(@responsible.name)

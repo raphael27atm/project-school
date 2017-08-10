@@ -31,8 +31,9 @@ describe "Adding students" do
     fill_in "student_age", with: student.age
     fill_in "student_phone", with: student.phone
     click_button "Salvar"
-    within("div.alert") do
-      expect(page).to have_content("Foi encontrado os sequintes erros: [\"Unit é obrigatório(a)\", \"Unit não pode ficar em branco\"]")
+  
+    within(".help-block") do
+      expect(page).to have_content("não pode ficar em branco")
     end
   end
 

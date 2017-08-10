@@ -24,9 +24,8 @@ describe "Adding units" do
     click_link "Adicionar novo professor"
     fill_in "teacher_name", with: ""
     click_button "Salvar"
-    within("div.alert") do
-      expect(page).to have_content("Foi encontrado os sequintes erros: [\"Unit é obrigatório(a)\"")
-    end
+    
+    expect(page).to have_content("não pode ficar em branco")
   end
 
 end

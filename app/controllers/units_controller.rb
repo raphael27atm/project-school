@@ -6,6 +6,7 @@ class UnitsController < BaseController
     @units = current_school.units
       .includes(:students, :teams)
       .order(id: :desc).paginate(:page => params[:page], :per_page => 5)
+    respond_with(@units)
   end
 
   def show
@@ -16,37 +17,21 @@ class UnitsController < BaseController
   end
 
   def create
-    @unit = Unit.new(unit_params)
-    @unit.school_id = current_user.school_id if current_user.role.name == "moderator"
-    if @unit.save
-      flash[:notice] = 'Unidade criada com sucesso'
-      redirect_to action: :index
-    else
-      flash[:error] = "Foi encontrado os sequintes erros: #{@unit.errors.full_messages }"
-      render :new
-    end
+    @unit = Unit.create(unit_params)
+    respond_with(@unit)
   end
 
   def edit
   end
 
   def update
-    if @unit.update_attributes(unit_params)
-      flash[:notice] = 'Unidade editada com sucesso'
-      redirect_to action: :index
-    else
-      flash[:error] = 'Erro ao editar a unidade'
-      render :edit
-    end
+    @unit.update_attributes(unit_params)
+    respond_with(@unit)
   end
 
   def destroy
-    if @unit.destroy
-      flash[:notice] = "Unidade foi deletada."
-    else
-      flash[:error] = "Não foi possvel deletar essa unidade."
-    end
-    redirect_to units_path
+    @unit.destroy
+    respond_with(@unit)
   end
 
   private
@@ -66,7 +51,7 @@ class UnitsController < BaseController
         :neighborhood,
         :complement,
         :street ]
-    )
+    ).merge(school_id: current_user.school_id)
   end
 
 end

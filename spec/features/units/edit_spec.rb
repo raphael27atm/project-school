@@ -23,7 +23,7 @@ describe "Editing units" do
     
     click_button "Editar"
 
-    expect(page).to have_content("Unidade editada com sucesso")
+    expect(page).to have_content("Unidade foi atualizado com sucesso")
     
     @unit.reload
  
@@ -37,8 +37,7 @@ describe "Editing units" do
     
     click_button "Editar"
 
-    expect(page).to_not have_content("Unidade editada com sucesso")
-    expect(page).to have_content("Erro ao editar a unidade")
+    expect(page).to have_content("não pode ficar em branco")
     
     @unit.reload
     expect(@unit.name).to eq(@unit.name)

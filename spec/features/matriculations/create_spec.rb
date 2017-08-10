@@ -28,7 +28,7 @@ describe "Adding matriculation" do
     find("#matriculation_student_id", "")
     click_button "Realizar Matricula"
     within("div.alert") do
-      expect(page).to have_content("Foi encontrado os sequintes erros: [\"Student é obrigatório(a)\"")
+      expect(page).to have_content("Foi encontrado os sequintes erros")
     end
   end
 

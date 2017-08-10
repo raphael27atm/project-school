@@ -4,6 +4,7 @@ class DashboardController < BaseController
   def index
     @analytics = School.where(id: current_school.id)
       .includes(units: [{students: :responsibles}, :teachers, :teams])
+    respond_with(@analytics)  
   end
 
   def session_school

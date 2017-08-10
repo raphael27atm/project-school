@@ -23,7 +23,7 @@ describe "Editing teacher" do
    
     click_button "Editar"
   
-    expect(page).to have_content("Professor editado com sucesso")
+    expect(page).to have_content("Professor foi atualizado com sucesso.")
   end
 
   it "is unsuccessful with no content" do
@@ -33,8 +33,7 @@ describe "Editing teacher" do
     
     click_button "Editar"
 
-    expect(page).to_not have_content("Professor editado com sucesso")
-    expect(page).to have_content("Erro ao editar o professor")
+    expect(page).to have_content("não pode ficar em branco")
     
     @teacher.first.reload
     expect(@teacher.first.name).to eq(@teacher.first.name)

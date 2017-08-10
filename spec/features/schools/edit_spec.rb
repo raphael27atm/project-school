@@ -29,7 +29,7 @@ describe "Editing schools" do
     
     click_button "Editar"
 
-    expect(page).to have_content("Escola editada com sucesso")
+    expect(page).to have_content("Escola foi atualizado com sucesso")
     
     @school.reload
 
@@ -43,8 +43,7 @@ describe "Editing schools" do
     
     click_button "Editar"
 
-    expect(page).to_not have_content("Escola editada com sucesso")
-    expect(page).to have_content("Erro ao editar escola")
+    expect(page).to have_content("não pode ficar em branco")
     
     @school.reload
     expect(@school.name).to eq(@school.name)

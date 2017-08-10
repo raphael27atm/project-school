@@ -17,7 +17,7 @@ describe "Editing users" do
      
     click_button "Editar"
  
-    expect(page).to have_content("Usuário editado com sucesso")
+    expect(page).to have_content("Usuário foi atualizado com sucesso")
     
     user.reload
 
@@ -31,8 +31,7 @@ describe "Editing users" do
     
     click_button "Editar"
 
-    expect(page).to_not have_content("Usuário editado com sucesso")
-    expect(page).to have_content("Erro ao editar usuário")
+    expect(page).to have_content("não pode ficar em branco")
     
     user.reload
     expect(user.name).to eq(user.name)

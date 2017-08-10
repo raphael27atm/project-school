@@ -6,6 +6,7 @@ class ResponsiblesController < BaseController
     @responsibles = Responsible.all
       .includes(:student).order(id: :desc)
       .paginate(:page => params[:page], :per_page => 5)
+    respond_with(@responsibles)
   end
 
   def show
@@ -16,36 +17,22 @@ class ResponsiblesController < BaseController
   end
 
   def create
-    @responsible = Responsible.new(responsible_params)
-    if @responsible.save
-      flash[:notice] = 'Responsável adicionado com sucesso'
-      redirect_to action: :index
-    else
-      flash[:error] = "Foi encontrado os sequintes erros: #{@responsible.errors.full_messages }"
-      render :new
-    end
+    @responsible = Responsible.create(responsible_params)
+    respond_with(@responsible, location: responsibles_path)
   end
 
   def edit
+    respond_with(@responsible)
   end
 
   def update
-    if @responsible.update_attributes(responsible_params)
-      flash[:notice] = 'Responsável editado com sucesso'
-      redirect_to action: :index
-    else
-      flash[:error] = 'Erro ao editar o responsável'
-      render :edit
-    end
+    @responsible.update_attributes(responsible_params)
+    respond_with(@responsible, location: responsibles_path)
   end
 
   def destroy
-    if @responsible.destroy
-      flash[:notice] = "O responsável foi deletado."
-    else
-      flash[:error] = "Não foi possvel deletar o responsável."
-    end
-    redirect_to responsibles_path
+    @responsible.destroy
+    respond_with(@responsible) 
   end
 
   private

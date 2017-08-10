@@ -24,9 +24,8 @@ describe "Adding users" do
     click_link "Adicionar novo usuário"
     fill_in "user_name", with: ""
     click_button "Salvar"
-    within("div.alert") do
-      expect(page).to have_content("Foi encontrado os sequintes erros: [\"E-mail não pode ficar em branco\"")
-    end
+    
+    expect(page).to have_content("não pode ficar em branco")
   end
 
 end
