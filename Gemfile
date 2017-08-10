@@ -34,10 +34,14 @@ group :development, :test do
   gem 'faker', '~> 1.7'
   gem 'pry'
   gem 'selenium-webdriver'
+  gem 'fuubar'
 end
 
 group :test do
   gem 'database_cleaner'
+  gem 'launchy'
+  gem 'poltergeist'
+  gem "webmock"
 end
 
 group :development do

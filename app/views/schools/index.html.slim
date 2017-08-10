@@ -15,7 +15,7 @@
           th.percent-20.text-center Ação
       tbody 
         - @schools.each do |school|
-          tr id="school_#{school.id}"
+          tr id="#{dom_id(school)}"
             th scope="row" = school.id
             td = school.name
             td.text-center

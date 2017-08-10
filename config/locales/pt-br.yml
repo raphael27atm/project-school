@@ -216,6 +216,9 @@ pt-BR:
 
   
   activerecord:
+    errors:
+      messages:
+        record_invalid: "Validation failed: %{errors}"
     attributes:
 
       models:

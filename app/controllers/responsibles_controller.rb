@@ -40,7 +40,6 @@ class ResponsiblesController < BaseController
   end
 
   def destroy
-    binding.pry
     if @responsible.destroy
       flash[:notice] = "O responsável foi deletado."
     else

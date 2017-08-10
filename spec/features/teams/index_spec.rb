@@ -12,7 +12,7 @@ describe "Viewing teams" do
     expect(page).to have_content "Turmas"
     expect(teams.count).to eq 10
   end  
-
+ 
   it "displays no items when a student is empty" do
     visit teams_path
     expect(page.all("table.todo_items tbody tr").size).to eq(0)

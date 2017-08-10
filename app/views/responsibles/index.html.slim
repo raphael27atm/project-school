@@ -15,7 +15,7 @@
           th.percent-20.text-center Ação
       tbody 
         - @responsibles.each do |responsible|
-          tr id="responsible_#{responsible.id}"
+          tr id="#{dom_id(responsible)}"
             th scope="row" = responsible.id
             td = responsible.name
             td = responsible.student.name
@@ -30,5 +30,5 @@
         = will_paginate @responsibles, renderer: BootstrapPagination::Rails              
   - else
     .alert.alert-info
-      | Não existe nenhum estudante cadastrado
+      | Não existe nenhum responsável cadastrado
 

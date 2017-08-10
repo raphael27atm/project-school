@@ -16,7 +16,7 @@ describe "Editing users" do
     fill_in "user_name", with: "Nome Editado" 
      
     click_button "Editar"
-
+ 
     expect(page).to have_content("Usuário editado com sucesso")
     
     user.reload

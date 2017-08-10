@@ -7,12 +7,12 @@ describe "Editing responsibles" do
   before(:each) do 
     sign_in_user(user)
     @responsible = create(:responsible, student_id: student.id)
-  end
+  end 
 
   it "is successful with valid content" do
     visit responsibles_path
     
-    within("#responsible_#{@responsible.id}") do
+    within dom_id_for(@responsible) do
       find(".fa-edit").click
     end
     
@@ -23,7 +23,7 @@ describe "Editing responsibles" do
    
     click_button "Editar"
   
-    expect(page).to have_content("Adicionar novo resposável")
+    expect(page).to have_content("Responsável editado com sucesso")
   
   end
 

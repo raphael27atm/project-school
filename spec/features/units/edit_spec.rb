@@ -26,7 +26,7 @@ describe "Editing units" do
     expect(page).to have_content("Unidade editada com sucesso")
     
     @unit.reload
-
+ 
     expect(@unit.name).to eq("Nome Editado")
   end
 

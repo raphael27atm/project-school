@@ -1,21 +1,21 @@
 require 'rails_helper'
 
-describe "Deleting unit" do
+describe "Deleting responsible" do
   let(:user) { create(:user) }
-  
+  let(:student) { create(:student) }
+ 
   before(:each) do 
     sign_in_user(user)
-    @student = create(:student)
   end
 
   it "is successful" do
-    visit students_path
-
-    within "#student_#{@student.id}" do
-      find("#link_trash_#{@student.id}").click
-    end 
-
-    expect(page).to have_content("Estudante foi deletado.")
-    expect(Student.count).to eq(0)
+    @responsible = create(:responsible, student_id: student.id)
+    visit responsibles_path
+  
+    within dom_id_for(@responsible) do
+      find("#link_trash_#{@responsible.id}").click
+    end  
+    
+    expect(page).to have_content("O responsável foi deletado.")
   end
 end

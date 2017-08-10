@@ -17,7 +17,6 @@ describe "Adding users" do
     click_button "Salvar"
     
     expect(page).to have_content("Usuários")
-    
   end
 
   it "displays an error with no content" do

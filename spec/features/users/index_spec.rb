@@ -6,9 +6,10 @@ describe "Viewing users" do
   before { sign_in_user(user) }
 
   it "List users" do
+    users = create_list(:user, 10)
     visit users_path
     expect(page).to have_content "Usuários"
-    expect(User.count).to eq 1
+    expect(users.count).to eq 10
   end  
 
   it "displays no items when a user is empty" do

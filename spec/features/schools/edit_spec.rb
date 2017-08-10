@@ -12,10 +12,10 @@ describe "Editing schools" do
 
   it "is successful with valid content" do
     visit schools_path
-    
-    within("#school_#{@school.id}") do
-      find(".fa-edit").click
-    end
+  
+    within dom_id_for(@school) do
+      find(".fa-edit").click 
+    end 
     
     visit edit_school_path(@school)
     
