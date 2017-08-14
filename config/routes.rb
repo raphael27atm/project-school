@@ -17,4 +17,18 @@ Rails.application.routes.draw do
   resources :teams, path: "turmas" do 
     resources :matriculations, only: [:new, :create, :destroy]
   end
+
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+        resources :auth, :only => [:create, :destroy]
+
+        resources :schools
+        resources :users
+        resources :units
+        resources :students
+        resources :teachers
+        resources :responsibles
+    end
+  end
+
 end

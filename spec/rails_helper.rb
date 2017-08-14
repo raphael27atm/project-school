@@ -77,7 +77,7 @@ RSpec.configure do |config|
   config.include AuthenticationHelpers::Controller, type: :controller
   config.include RailsDomIdHelper, type: :feature
   config.include Features::SessionHelpers, type: :feature
-  
+  config.include RequestHelper, type: :request
   config.include Devise::TestHelpers, :type => :controller
   
   config.expect_with :rspec do |c|

@@ -1,0 +1,1 @@
+SchoolProject::Application.config.secret_api_key = "appschool2iiH8m98nSWi23II8988"

@@ -3,10 +3,9 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   let(:role){ create(:role)}
   let(:school){ create(:school)}
+  subject(:user) { create(:user, role: role, school_id: school.id)}
 
   it 'is valid with valid atributes' do
-
-    user = create(:user, role: role, school_id: school.id)
     expect(user).to be_valid
   end
 
@@ -25,8 +24,17 @@ RSpec.describe User, type: :model do
     expect(user).to_not be_valid
   end
 
+  describe "#generate_authentication_token!" do
+    it { should validate_uniqueness_of(:auth_token)} 
+
+    it "generates another token when one already has been taken" do
+      existing_user = create(:user, auth_token: "auniquetoken123")
+      user.generate_auth_token
+      expect(user.auth_token).not_to eql existing_user.auth_token
+    end
+  end
+
   describe 'validations shoulda matchers' do
-    subject(:user) { create(:user, role: role, school_id: school.id)}
     it { should belong_to(:school) }
     it { is_expected.to validate_presence_of(:name)}
     it { is_expected.to validate_presence_of(:email)}

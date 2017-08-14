@@ -20,6 +20,8 @@ gem 'devise', '~> 4.2'
 gem 'slim-rails', '~> 3.1', '>= 3.1.1'
 gem "font-awesome-rails"
 gem 'simple_form'
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'rack-cors'
 
 # Env variables
 gem 'dotenv-rails'
