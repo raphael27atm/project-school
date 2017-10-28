@@ -1,4 +1,4 @@
-> Web App Project School
+# Web App Project School
 
 [![Code Climate](https://codeclimate.com/github/raphael27atm/project-school/badges/gpa.svg)](https://codeclimate.com/github/raphael27atm/project-school)
 
